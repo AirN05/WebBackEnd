@@ -27,8 +27,9 @@ public function view($data){
 	public function edit($id){
 		
 		
-		$_PUT = array();
-		parse_str(file_get_contents('php://input'), $_PUT);
+		
+		
+		$_PUT=json_decode(file_get_contents('php://input'));
 
 		if((isset($_PUT['id']))&&(isset($_PUT['name']))&&(isset($_PUT['image']))&&(isset($_PUT['power']))&&(isset($_PUT['speed']))){
 			
